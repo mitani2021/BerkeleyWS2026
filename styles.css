@@ -1,0 +1,463 @@
+/* =========================================================
+   Design system
+========================================================= */
+:root {
+  --text: #3f4946;
+  --muted: #6d7773;
+  --deep-green: #355f4d;
+  --green: #497965;
+  --link: #287a79;
+
+  --mint: #edf4ef;
+  --mint-deep: #dcebe2;
+
+  --cream: #faf5e8;
+  --cream-deep: #efe3c8;
+
+  --blue: #eef4f8;
+  --blue-deep: #dbe8ef;
+
+  --lavender: #f3eff7;
+  --lavender-deep: #e4dceb;
+
+  --paper: #f7faf8;
+  --white-soft: rgba(255, 255, 255, 0.82);
+
+  --line: rgba(62, 86, 75, 0.14);
+  --shadow: 0 14px 34px rgba(55, 73, 66, 0.08);
+
+  --container: 920px;
+
+  --sans:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Helvetica Neue",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    "YuGothic",
+    sans-serif;
+
+  --serif:
+    Georgia,
+    "Times New Roman",
+    "Yu Mincho",
+    "YuMincho",
+    serif;
+}
+
+/* =========================================================
+   Base
+========================================================= */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.85;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.container {
+  width: min(calc(100% - 40px), var(--container));
+  margin: 0 auto;
+  text-align: center;
+}
+
+p {
+  margin-top: 0;
+}
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--deep-green);
+}
+
+/* =========================================================
+   Hero
+========================================================= */
+.hero {
+  position: relative;
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    url("./hero-reference.jpg")
+    center 42% / cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      rgba(27, 44, 34, 0.44),
+      rgba(27, 44, 34, 0.52)
+    );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(calc(100% - 40px), 900px);
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+}
+
+.hero h1 {
+  max-width: 860px;
+  margin: 0 auto;
+  font-size: clamp(2.25rem, 4.7vw, 3.8rem);
+  line-height: 1.28;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.26);
+}
+
+.hero-en {
+  margin: 26px 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+}
+
+/* =========================================================
+   Shared sections
+========================================================= */
+.section {
+  padding: 76px 0 80px;
+}
+
+.section-about {
+  background: var(--mint);
+}
+
+.section-info {
+  background: var(--blue);
+}
+
+.section-registration {
+  background: var(--cream);
+}
+
+.section-program {
+  background: var(--lavender);
+}
+
+.section-past {
+  background: var(--mint);
+}
+
+.section-heading {
+  margin-bottom: 34px;
+}
+
+.section-kicker {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--green);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h2 {
+  max-width: 880px;
+  margin: 0 auto;
+  color: var(--deep-green);
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3.3vw, 2.65rem);
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.en,
+.lead-en,
+.info-en,
+.notice-en {
+  color: var(--muted);
+}
+
+/* =========================================================
+   About
+========================================================= */
+.lead {
+  max-width: 790px;
+  margin: 0 auto;
+}
+
+.lead-ja {
+  margin-bottom: 12px;
+  color: #45534e;
+  font-family: var(--serif);
+  font-size: clamp(1.22rem, 2vw, 1.48rem);
+  line-height: 1.95;
+}
+
+.lead-en {
+  margin-bottom: 0;
+  font-size: 0.96rem;
+  line-height: 1.85;
+}
+
+/* =========================================================
+   Event information
+========================================================= */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.info-card {
+  min-height: 205px;
+  padding: 30px 24px;
+  background: var(--white-soft);
+  border: 1px solid rgba(72, 100, 116, 0.10);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-label {
+  margin-bottom: 15px;
+  color: var(--green);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.info-value {
+  color: #445650;
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.info-en {
+  margin-top: 7px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   Registration
+========================================================= */
+.registration-copy {
+  max-width: 720px;
+  margin: 0 auto 26px;
+}
+
+.registration-copy p {
+  margin-bottom: 7px;
+}
+
+.registration-copy p:first-child {
+  font-family: var(--serif);
+  font-size: 1.08rem;
+}
+
+.registration-copy .en {
+  font-size: 0.95rem;
+}
+
+.registration-link {
+  margin: 30px 0 0;
+}
+
+.registration-link a {
+  display: inline-block;
+  padding: 13px 24px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(111, 96, 63, 0.16);
+  border-radius: 999px;
+  color: #74643f;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(94, 82, 54, 0.06);
+}
+
+.registration-link a:hover,
+.registration-link a:focus-visible {
+  background: rgba(255, 255, 255, 0.92);
+  color: #5c5037;
+}
+
+/* =========================================================
+   Program
+========================================================= */
+.notice-box {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 38px 34px;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(88, 73, 107, 0.12);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.notice-ja {
+  margin-bottom: 8px;
+  color: #5d5366;
+  font-family: var(--serif);
+  font-size: 1.17rem;
+}
+
+.notice-en {
+  margin-bottom: 0;
+  font-size: 0.94rem;
+}
+
+/* =========================================================
+   Past workshop
+========================================================= */
+.past-card {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 42px 38px;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(67, 93, 80, 0.11);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.past-label {
+  margin-bottom: 8px;
+  color: var(--green);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.past-card h3 {
+  margin: 0;
+  color: var(--deep-green);
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+  line-height: 1.45;
+}
+
+.past-subtitle {
+  margin: 5px 0 24px;
+  color: var(--muted);
+}
+
+.past-meta {
+  color: #55645e;
+}
+
+.past-meta p {
+  margin-bottom: 10px;
+}
+
+.past-notice {
+  margin-top: 26px;
+  padding-top: 23px;
+  border-top: 1px solid var(--line);
+}
+
+.past-notice p {
+  margin-bottom: 6px;
+}
+
+.past-notice p:first-child {
+  color: #50645a;
+  font-family: var(--serif);
+  font-size: 1.06rem;
+}
+
+/* =========================================================
+   Footer
+========================================================= */
+footer {
+  background: #e9efe9;
+  border-top: 1px solid rgba(67, 88, 75, 0.10);
+}
+
+.footer-inner {
+  padding: 42px 0 44px;
+}
+
+.footer-title {
+  margin-bottom: 8px;
+  color: #596a62;
+  font-family: var(--serif);
+}
+
+.footer-contact {
+  margin-bottom: 0;
+  color: #68736e;
+  font-size: 0.88rem;
+}
+
+/* =========================================================
+   Responsive
+========================================================= */
+@media (max-width: 820px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(calc(100% - 28px), var(--container));
+  }
+
+  .hero {
+    min-height: 360px;
+  }
+
+  .hero h1 {
+    font-size: 2.15rem;
+  }
+
+  .hero-en {
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+
+  .section {
+    padding: 60px 0 64px;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .notice-box,
+  .past-card {
+    padding: 30px 22px;
+  }
+
+  .registration-link a {
+    padding: 12px 18px;
+  }
+}
